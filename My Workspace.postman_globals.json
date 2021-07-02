@@ -1,0 +1,254 @@
+{
+	"id": "0b459a94-8a4e-4f06-8e5f-c9e6321a8e4a",
+	"values": [
+		{
+			"key": "$token.autos",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "url",
+			"value": "https://servicios-tst.lacaja.com.ar",
+			"enabled": true
+		},
+		{
+			"key": "urlcomercial",
+			"value": "http://apitst.caja.com:9443/api-platcom/1.2\n",
+			"enabled": true
+		},
+		{
+			"key": "$token.comercial",
+			"value": "760f8657-3889-3885-99d3-80500f4afb75",
+			"enabled": true
+		},
+		{
+			"key": "$tokenbp",
+			"value": "",
+			"enabled": false
+		},
+		{
+			"key": "token.oneclick",
+			"value": "",
+			"enabled": false
+		},
+		{
+			"key": "$tokenoneclic",
+			"value": "",
+			"enabled": false
+		},
+		{
+			"key": "$token.equifax",
+			"value": "",
+			"enabled": false
+		},
+		{
+			"key": "token.socios",
+			"value": "",
+			"enabled": false
+		},
+		{
+			"key": "$token.admin",
+			"value": "",
+			"enabled": false
+		},
+		{
+			"key": "$access_token",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.experta",
+			"value": "10a43970-4bc9-3e5b-8628-855b75ab3843",
+			"enabled": true
+		},
+		{
+			"key": "$token.autos",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "ticket",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.client",
+			"value": "de6c062f-8339-3f28-b48a-718d6689726c",
+			"enabled": true
+		},
+		{
+			"key": "$token.socios",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.oneclick",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.salesforce",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.commons",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.promociones",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.auditoria",
+			"value": "0ac2515e-2d02-387b-9f65-20e3f0b09afa",
+			"enabled": true
+		},
+		{
+			"key": "$token.campaña",
+			"value": "0aff1d16-29bc-3c79-8b11-3b37be40b137",
+			"enabled": true
+		},
+		{
+			"key": "$token.cotizacion",
+			"value": "ba1422f6-ec9d-3e6e-81e3-6f9e3807892b",
+			"enabled": true
+		},
+		{
+			"key": "$token.siomma",
+			"value": "ba1422f6-ec9d-3e6e-81e3-6f9e3807892b",
+			"enabled": true
+		},
+		{
+			"key": "$token.polizas",
+			"value": "ba1422f6-ec9d-3e6e-81e3-6f9e3807892b",
+			"enabled": true
+		},
+		{
+			"key": "$token.flota",
+			"value": "481c7477-f9be-3f49-922d-f9494aadd1a5",
+			"enabled": true
+		},
+		{
+			"key": "$token.logs",
+			"value": "78458d70-afb7-3da8-9c0f-3852b49d7d45",
+			"enabled": true
+		},
+		{
+			"key": "$token.merlin",
+			"value": "91cdc925-0c4e-3167-951a-6fe2cdfad153",
+			"enabled": true
+		},
+		{
+			"key": "$token.generales",
+			"value": "743178bb-72f8-3f63-a806-692ed262aa5b",
+			"enabled": true
+		},
+		{
+			"key": "$token.athento",
+			"value": "69706d04-a6a6-34fc-bd69-f663d20c17d1",
+			"enabled": true
+		},
+		{
+			"key": "$token.proxy",
+			"value": "69706d04-a6a6-34fc-bd69-f663d20c17d1",
+			"enabled": true
+		},
+		{
+			"key": "$token.adecuacionlovs",
+			"value": "69706d04-a6a6-34fc-bd69-f663d20c17d1",
+			"enabled": true
+		},
+		{
+			"key": "$token.comisiones",
+			"value": "e79f2848-062e-39da-b878-e81487235c5f",
+			"enabled": true
+		},
+		{
+			"key": "$token.telematica",
+			"value": "61ebb2b9-c3b5-325b-9812-fae05513537b",
+			"enabled": true
+		},
+		{
+			"key": "$token.reportes",
+			"value": "4a0976a6-9374-3b7a-a329-61c83ea000fb",
+			"enabled": true
+		},
+		{
+			"key": "$token.infoautos",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.polaris",
+			"value": "d28f44fb-f69b-3164-8010-ae828b6ab89f",
+			"enabled": true
+		},
+		{
+			"key": "$token.audatex",
+			"value": "c25aa427-2b60-3ea1-a064-fabfd00e0e6e",
+			"enabled": true
+		},
+		{
+			"key": "$token.estadisticas",
+			"value": "b86a037e-92bc-3407-af22-c7d9d147ac59",
+			"enabled": true
+		},
+		{
+			"key": "$token.rescision",
+			"value": "d9a7335b-9b5e-3613-bad0-cc9a710ae28e",
+			"enabled": true
+		},
+		{
+			"key": "$token.gateway",
+			"value": "a9aeae45-e44a-3d1a-96ee-3b517a683e46",
+			"enabled": true
+		},
+		{
+			"key": "$token.interactiva",
+			"value": "4d41b4b2-4c19-3405-9f06-c077a27699e9",
+			"enabled": true
+		},
+		{
+			"key": "$token.admin",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$token.claims",
+			"value": "ffcafb91-46ef-3e4c-9ecc-ff20b6176d95",
+			"enabled": true
+		},
+		{
+			"key": "$tokenbp",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "$access_expert",
+			"value": "6be62f7b-3d6c-3e7b-8449-a4ca6e5f870b",
+			"enabled": true
+		},
+		{
+			"key": "$access_gcti",
+			"value": "cecb5d5b-853e-301d-a9c8-b06b77fad9a0",
+			"enabled": true
+		},
+		{
+			"key": "$token.purecloudgenesys",
+			"value": "b8c6834d-20f1-300b-8c69-e4a2b64dd242",
+			"enabled": true
+		},
+		{
+			"key": "$token.cortesuprema",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZF9vZmljIjoiSTAyMTAiLCJpc3MiOiJTQ0JBIiwibnJvX2xlZ2FqbyI6IlMxOTM0MC0xIiwiZXhwIjoxNjI0NTYwODg3LCJpYXQiOjE2MjQ1NTk5ODd9.h3LKj6Dn4lpST4PZhgyUZqI_fSXSsbFuJ2PicRk3jCM",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2021-06-24T18:42:23.893Z",
+	"_postman_exported_using": "Postman/8.6.2"
+}

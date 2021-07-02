@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "82eb031b-ed84-4af2-a0e5-aa184450bd81",
+		"name": "corte suprema telegrafia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AuthUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.get(\"Globals\");\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nroLegajo\": \"S19340-1\",\r\n   \"idOfic\": \"I0210\",\r\n   \"pass\": \"723875472D2D3C9E\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/auth/authUser"
+			},
+			"response": []
+		},
+		{
+			"name": "con firma",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validacion de Json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{$token.cortesuprema}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"texto\": \"4hora un t3xt0 en m1nuscul4 para probar.\",\r\n    \"archivo\": \"1233ABZAC\",\r\n    \"codigoVericacionPago\":\"1808702831GC352113\",\r\n    \"diaHorEmi\": \"2021-02-26T8:00:00\",\r\n    \"firmaTlg\": {\r\n    \t   \"nombre\": \"ANEPA\",\r\n        \"barrio\": \"SUCURSAL PRUEBA\",\r\n        \"calle\": \"CNEL\",\r\n        \"codPos\": \"1000\",\r\n        \"codigo\": 36837,\r\n        \"dpto\": \"999\",\r\n        \"loc\": \"CIUDAD AUTONOMA BUENOS AIRES\",\r\n        \"memoNombre\": \"-MARKETING OPERATIVO SIE\",\r\n        \"nroCalle\": \"20769681\",\r\n        \"piso\": \"155\",\r\n        \"prov\": \"B\"\r\n    },\r\n    \"listaDestinatarios\": [\r\n        {\r\n            \"nombre\": \"ROMINA\",\r\n            \"nroDoc\": 29906014,\r\n            \"prov\": \"B\",\r\n            \"loc\": \"BERAZATEGUI\",\r\n            \"codPos\": \"\",\r\n            \"barrio\": \"BARRAkens\",\r\n            \"calle\": \"CNEL BRANDSEN\",\r\n            \"nroCalle\": \"2070\",\r\n            \"piso\": \"3\",\r\n            \"dpto\": \"b\"\r\n        }\r\n    ],\r\n    \"remitente\": {\r\n        \"nombre\": \"MARKETING OPERATIVO SIE\",\r\n        \"prov\": \"B\",\r\n        \"loc\": \"CIUDAD AUTONOMA BUENOS AIRES\",\r\n        \"codPos\": \"1000\",\r\n        \"barrio\": \"SUCURSAL para probar\",\r\n        \"calle\": \"DR FAVALORO\",\r\n        \"nroCalle\": \"20769681\",\r\n        \"dpto\": \"999\",\r\n        \"piso\": \"A\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/trans/enviarTlg"
+			},
+			"response": []
+		},
+		{
+			"name": "sin firma",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validacion de Json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{$token.cortesuprema}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"texto\": \"4hora un t3xt0 en m1nuscul4 para probar.\",\r\n    \"archivo\": \"1233ABZAC\",\r\n    \"codigoVericacionPago\":\"1808702831GC352113\",\r\n    \"diaHorEmi\": \"2021-02-26T8:00:00\",\r\n    \"listaDestinatarios\": [\r\n        {\r\n            \"nombre\": \"ROMINA\",\r\n            \"nroDoc\": 29906014,\r\n            \"prov\": \"B\",\r\n            \"loc\": \"BERAZATEGUI\",\r\n            \"codPos\": \"\",\r\n            \"barrio\": \"BARRAkens\",\r\n            \"calle\": \"CNEL BRANDSEN\",\r\n            \"nroCalle\": \"2070\",\r\n            \"piso\": \"3\",\r\n            \"dpto\": \"b\"\r\n        }\r\n    ],\r\n    \"remitente\": {\r\n        \"nombre\": \"MARKETING OPERATIVO SIE\",\r\n        \"prov\": \"B\",\r\n        \"loc\": \"CIUDAD AUTONOMA BUENOS AIRES\",\r\n        \"codPos\": \"1000\",\r\n        \"barrio\": \"SUCURSAL para probar\",\r\n        \"calle\": \"DR FAVALORO\",\r\n        \"nroCalle\": \"20769681\",\r\n        \"dpto\": \"999\",\r\n        \"piso\": \"A\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/trans/enviarTlg"
+			},
+			"response": []
+		},
+		{
+			"name": "getprov",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validacion de Json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{$token.cortesuprema}}",
+						"type": "text"
+					}
+				],
+				"url": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/trans/getProvincias"
+			},
+			"response": []
+		},
+		{
+			"name": "getlocalidades",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validacion de Json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{$token.cortesuprema}}",
+						"type": "text"
+					}
+				],
+				"url": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/trans/getLocadidades"
+			},
+			"response": []
+		},
+		{
+			"name": "get serial",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validacion de Json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{$token.cortesuprema}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/trans/getSerial?idTeleg=95",
+					"protocol": "https",
+					"host": [
+						"ptest04",
+						"correoargentino",
+						"com",
+						"ar"
+					],
+					"path": [
+						"scba",
+						"PlatIntSTS-0.0.1-Dev",
+						"envio",
+						"trans",
+						"getSerial"
+					],
+					"query": [
+						{
+							"key": "idTeleg",
+							"value": "95"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forzar Novedades",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZF9vZmljIjoiSTAyMTAiLCJpc3MiOiJTQ0JBIiwibnJvX2xlZ2FqbyI6IlMxOTM0MC0xIiwiZXhwIjoxNjI0NTU0NjMyLCJpYXQiOjE2MjQ1NTM3MzJ9.rJNWAKJ4rfe801n03JEltQEgUTjWHsFX4KesKjWEtRg",
+						"type": "text"
+					}
+				],
+				"url": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/trans/forzarNovedades"
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{$token.cortesuprema}}",
+						"type": "text"
+					}
+				],
+				"url": "http://platint-sts-scba-telegrafia-dev.noprod.correo.local/PlatIntSTS-0.0.1-Dev/envio/auth/refreshTokenJWT"
+			},
+			"response": []
+		},
+		{
+			"name": "refresh monitor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validacion de Json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{$token.cortesuprema}}",
+						"type": "text"
+					}
+				],
+				"url": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/mon/getMonitorStatus"
+			},
+			"response": []
+		},
+		{
+			"name": "getTNpago",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Codigo 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validacion de Json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{$token.cortesuprema}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ptest04.correoargentino.com.ar/scba/PlatIntSTS-0.0.1-Dev/envio/trans/getTNPago?tNPAgo=1808702831GC352113",
+					"protocol": "https",
+					"host": [
+						"ptest04",
+						"correoargentino",
+						"com",
+						"ar"
+					],
+					"path": [
+						"scba",
+						"PlatIntSTS-0.0.1-Dev",
+						"envio",
+						"trans",
+						"getTNPago"
+					],
+					"query": [
+						{
+							"key": "tNPAgo",
+							"value": "1808702831GC352113"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
